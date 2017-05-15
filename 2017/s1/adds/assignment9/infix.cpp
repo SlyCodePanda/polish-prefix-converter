@@ -32,7 +32,7 @@ std::vector <std::string> infix::ques( std::vector<std::string> input )
 			vec.insert( vec.begin(), input.at(i) );
 		}
 
-		// If element is a operator...
+		// If element is an operator...
 		if( input.at(i) == plus || input.at(i) == times || input.at(i) == divi || input.at(i) == min )
 		{
 			j++;
