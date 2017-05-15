@@ -31,6 +31,7 @@ int main()
 
     std::vector<int> vec = ptrCalc->convert( input );
 
+
     /*-----OUTPUT-----*/
 
     // Printing out Polish Prefix input given by user.
@@ -41,7 +42,8 @@ int main()
     }
     std::cout << "\n";
 
-    //std::cout << vec.at(0) << std::endl;
+    // Print out the result of the statement.
+    std::cout << vec.at(0) << std::endl;
 
     return 0;
 }
