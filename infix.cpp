@@ -20,9 +20,8 @@ std::vector <std::string> infix::ques( std::vector<std::string> input )
 {
 	int length = input.size();
 	std::vector<std::string> vec;
+	// j is used as a counter for the operators.
 	int j = 0;
-
-	std::cout << "length of input: " << length << std::endl;
 
 	// Scans the given prefix expression from right to left.
 	for( int i = length-1 ; i >= 0 ; i-- )
@@ -39,17 +38,12 @@ std::vector <std::string> infix::ques( std::vector<std::string> input )
 			j++;
 			std::string operand1 = input.at(i);
 
-			std::cout << "j = " << j << std::endl;
 			vec.insert (vec.begin()+j,operand1 );
 			j++;
 		}
 	}
-/*
-	std::cout << "number added: " << std::endl;
-	for( int i = 0 ; i < vec.size() ; i++ )
-		std::cout << vec.at(i) << " ";
-	std::cout << " \n";
-*/
+
+	vec.insert( vec.end(), " = " );
 	return vec;
 }
 
@@ -62,9 +56,6 @@ std::vector<int> infix::convert( std::vector<std::string> input )
 	// Scans the given prefix expression from right to left.
 	for( int i = length-1 ; i >= 0 ; i-- )
 	{
-		// For test, checking input vector.
-		std::cout << input.at(i) << std::endl;
-
 		// If 'operand' (i.e nonnegative number between 0 - 99) ...
 		// If element is not an operator.
 		if( input.at(i) != plus && input.at(i) != times && input.at(i) != divi && input.at(i) != min )
@@ -87,8 +78,7 @@ std::vector<int> infix::convert( std::vector<std::string> input )
 
 			vec.erase (vec.begin(),vec.begin()+2);
 
-			// Showing output of the computation being performed.
-			std::cout << opperand1 << " + " << opperand2 << "\n";
+			// Computing 'operand1' 'operator' 'operand2'.
 			int operation = opperand1 + opperand2;
 			vec.push_back( operation );
 		}
@@ -100,8 +90,7 @@ std::vector<int> infix::convert( std::vector<std::string> input )
 
 			vec.erase (vec.begin(),vec.begin()+2);
 
-			// Showing output of the computation being performed.
-			std::cout << opperand1 << " * " << opperand2 << "\n";
+			// Computing 'operand1' 'operator' 'operand2'.
 			int operation = opperand1 * opperand2;
 			vec.push_back( operation );
 		}
@@ -113,8 +102,7 @@ std::vector<int> infix::convert( std::vector<std::string> input )
 
 			vec.erase (vec.begin(),vec.begin()+2);
 
-			// Showing output of the computation being performed.
-			std::cout << opperand1 << " / " << opperand2 << "\n";
+			// Computing 'operand1' 'operator' 'operand2'.
 			int operation = opperand1 / opperand2;
 			vec.push_back( operation );
 		}
@@ -126,8 +114,7 @@ std::vector<int> infix::convert( std::vector<std::string> input )
 
 			vec.erase (vec.begin(),vec.begin()+2);
 
-			// Showing output of the computation being performed.
-			std::cout << opperand1 << " - " << opperand2 << "\n";
+			// Computing 'operand1' 'operator' 'operand2'.
 			int operation = opperand1 - opperand2;
 			vec.push_back( operation );
 		}

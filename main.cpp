@@ -37,7 +37,7 @@ int main()
 
 
     /*-----OUTPUT-----*/
-
+/*
     // Printing out Polish Prefix input given by user.
     std::cout << "inputted statement: " << std::endl;
     for( int i = 0 ; i < input.size() ; i++ )
@@ -45,14 +45,12 @@ int main()
         std::cout << input.at(i) << " ";
     }
     std::cout << "\n";
-
-    std::cout << "translated to infix notation: " <<std::endl;
+*/
+    //std::cout << "translated to infix notation: " <<std::endl;
     for( int i = 0 ; i < quest.size() ; i++ )
       std::cout << quest.at(i) << " ";
-    std::cout << std::endl;
 
     // Print out the result of the statement.
-    std::cout << "statement equals: \n";
     std::cout << vec.at(0) << std::endl;
 
     return 0;
