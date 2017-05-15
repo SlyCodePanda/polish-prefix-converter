@@ -29,6 +29,10 @@ int main()
     infix calc;
     infix *ptrCalc = &calc;
 
+    // The translated prefix statement into infix notation.
+    std::vector<std::string> quest = ptrCalc->ques( input );
+
+    // Calculating the result of the entered statement.
     std::vector<int> vec = ptrCalc->convert( input );
 
 
@@ -42,7 +46,13 @@ int main()
     }
     std::cout << "\n";
 
+    std::cout << "translated to infix notation: " <<std::endl;
+    for( int i = 0 ; i < quest.size() ; i++ )
+      std::cout << quest.at(i) << " ";
+    std::cout << std::endl;
+
     // Print out the result of the statement.
+    std::cout << "statement equals: \n";
     std::cout << vec.at(0) << std::endl;
 
     return 0;
