@@ -24,6 +24,14 @@ int main()
         input.push_back( value );
       }
    }
+
+   // Checking for errors.
+    int inLength = input.size();
+    if( inLength <= 2 )
+    {
+      std::cout << "ERROR \n";
+      return 0;
+    }
     
     // Creating infix object.
     infix calc;
@@ -37,17 +45,10 @@ int main()
 
 
     /*-----OUTPUT-----*/
-/*
-    // Printing out Polish Prefix input given by user.
-    std::cout << "inputted statement: " << std::endl;
-    for( int i = 0 ; i < input.size() ; i++ )
-    {
-        std::cout << input.at(i) << " ";
-    }
-    std::cout << "\n";
-*/
+
     //std::cout << "translated to infix notation: " <<std::endl;
-    for( int i = 0 ; i < quest.size() ; i++ )
+    int qLength = quest.size();  
+    for( int i = 0 ; i < qLength ; i++ )
       std::cout << quest.at(i) << " ";
 
     // Print out the result of the statement.
