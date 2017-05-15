@@ -29,7 +29,7 @@ int main()
     int inLength = input.size();
     if( inLength <= 2 )
     {
-      std::cout << "ERROR \n";
+      std::cout << "Error \n";
       return 0;
     }
     
