@@ -6,6 +6,12 @@
 
 #include "infix.h"
 
+// Global variables defining the operators as strings.
+std::string plus = "+";
+std::string times = "*";
+std::string divi = "/";
+std::string min = "-";
+
 int main()
 {
     std::vector<std::string> input;
@@ -25,13 +31,37 @@ int main()
       }
    }
 
-   // Checking for errors.
+   /*-----CHECKING FOR ERRORS-----*/
+   // if the length of the inputted statement is 2 or less, an error message is outputted.
     int inLength = input.size();
     if( inLength <= 2 )
     {
       std::cout << "Error \n";
       return 0;
     }
+
+    // If there is not one more operand than there is operators, return an error message.
+    int operatorCounter = 0;
+    int operandCounter = 0;
+    for( int i = inLength -1 ; i >= 0 ; i-- )
+    {
+        if ( input.at(i) == plus || input.at(i) == times || input.at(i) == divi || input.at(i) == min )
+        {
+            operatorCounter ++;
+        }
+        if ( input.at(i) != plus && input.at(i) != times && input.at(i) != divi && input.at(i) != min )
+        {
+            operandCounter ++;
+        }
+    }
+
+    if ( operandCounter != operatorCounter + 1 )
+    {
+        std::cout << "Error \n";
+        return 0;
+    }
+
+    /*----------------------------*/
     
     // Creating infix object.
     infix calc;
@@ -53,6 +83,8 @@ int main()
 
     // Print out the result of the statement.
     std::cout << vec.at(0) << std::endl;
+
+    /*------------------------------*/
 
     return 0;
 }
