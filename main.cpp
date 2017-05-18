@@ -32,7 +32,8 @@ int main()
    }
 
    /*-----CHECKING FOR ERRORS-----*/
-   // if the length of the inputted statement is 2 or less, an error message is outputted.
+
+    // if the length of the inputted statement is 2 or less, an error message is outputted.
     int inLength = input.size();
     if( inLength <= 2 )
     {
