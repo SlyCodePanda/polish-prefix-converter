@@ -22,6 +22,7 @@ std::vector <std::string> infix::ques( std::vector<std::string> input )
 	std::vector<std::string> vec;
 	// j is used as a counter for the operators.
 	int j = 0;
+	int k = 0; // <= counter for adding parenthesis?
 
 	// Scans the given prefix expression from right to left.
 	for( int i = length-1 ; i >= 0 ; i-- )
@@ -60,7 +61,7 @@ std::vector<int> infix::convert( std::vector<std::string> input )
 		// If element is not an operator.
 		if( input.at(i) != plus && input.at(i) != times && input.at(i) != divi && input.at(i) != min )
 		{
-			// Convert the found element into an integer 'x' and push it into vector.
+			// Convert the found element 'x' into an integer 'newX' and push it into vector.
 			std::string x = input.at(i);
 			int newX = std::stoi(x);
 
